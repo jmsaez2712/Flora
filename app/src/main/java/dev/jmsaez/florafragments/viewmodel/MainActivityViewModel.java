@@ -55,4 +55,8 @@ public class MainActivityViewModel extends AndroidViewModel {
     public MutableLiveData<Integer> getSecondDelete() {
         return repository.getSecondDelete();
     }
+
+    public MutableLiveData<RowsResponse> getEditLiveData() {
+        return repository.getEditLiveData();
+    }
 }

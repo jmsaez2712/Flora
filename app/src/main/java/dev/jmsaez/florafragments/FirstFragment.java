@@ -110,7 +110,6 @@ public class FirstFragment extends Fragment {
 
         MutableLiveData<Integer> delete = mavm.getSecondDelete();
         delete.observe(FirstFragment.this, integer -> {
-            Log.v(":::LIVEDATA", integer+"");
             refreshFragment();
         });
 
@@ -149,21 +148,10 @@ public class FirstFragment extends Fragment {
         floraList = mavm.getFloraLiveData();
         floraList.observe(this, floras -> {
             floraAdapter.setListFlora(floras);
-            Log.v(":::XXY", floras.toString());
             progressBar.setVisibility(View.GONE);
         });
     }
 
-
-    private int delete(){
-        AtomicInteger value = new AtomicInteger();
-        floraAdapter.delete();
-        MutableLiveData<Integer> delete = mavm.getSecondDelete();
-        delete.observe(getViewLifecycleOwner(), integer -> {
-            value.set(integer);
-        });
-        return value.get();
-    }
 
     private void updateContextualTitle(){
         this.actionMode.setTitle(tracker.getSelection().size()+"");
@@ -174,6 +162,7 @@ public class FirstFragment extends Fragment {
             @Override
             public boolean onCreateActionMode(ActionMode actionMode, Menu menu) {
                 actionMode.getMenuInflater().inflate(R.menu.action_mode_menu, menu);
+                toolbar.setVisibility(View.INVISIBLE);
                 return true;
             }
 
@@ -198,6 +187,7 @@ public class FirstFragment extends Fragment {
 
             @Override
             public void onDestroyActionMode(ActionMode p0) {
+                toolbar.setVisibility(View.VISIBLE);
                 tracker.clearSelection();
                 actionMode = null;
             }

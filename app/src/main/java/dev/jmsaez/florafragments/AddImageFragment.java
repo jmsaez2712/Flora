@@ -53,11 +53,16 @@ public class AddImageFragment extends Fragment {
     }
 
     private void initialize(View view) {
+
+        Bundle bundle = getArguments();
+        long floraid = bundle.getLong("idflora");
+
         launcher = getLauncher();
         Button btSelectImage;
         etDescripcion = view.findViewById(R.id.etDescripcion);
         etNombre = view.findViewById(R.id.etNombreImagen);
         etIdFlora = view.findViewById(R.id.etIdFlora);
+        etIdFlora.setText(String.valueOf(floraid));
         btSelectImage = view.findViewById(R.id.btSelectImage);
         btSelectImage.setOnClickListener(v -> {
             selectImage();

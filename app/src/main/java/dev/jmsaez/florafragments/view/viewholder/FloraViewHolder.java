@@ -1,8 +1,6 @@
 package dev.jmsaez.florafragments.view.viewholder;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.view.ActionMode;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -28,7 +26,7 @@ public class FloraViewHolder extends RecyclerView.ViewHolder {
     public FloraViewHolder(@NonNull View itemView) {
         super(itemView);
         ivFlora = itemView.findViewById(R.id.ivFlora);
-        tvFlora = itemView.findViewById(R.id.tvNameFlora);
+        tvFlora = itemView.findViewById(R.id.lyNameFlora);
         card = itemView.findViewById(R.id.floraCard);
 
         card.setOnClickListener(l -> {

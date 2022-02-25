@@ -7,14 +7,14 @@
     tools:context=".FloraDetailFragment">
 
     <ProgressBar
-        android:id="@+id/progressBar2"
-        style="@style/Widget.AppCompat.ProgressBar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    android:id="@+id/progressBar2"
+    style="@style/Widget.AppCompat.ProgressBar"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
@@ -39,45 +39,499 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
-<!--            <com.smarteist.autoimageslider.SliderView-->
-<!--                android:id="@+id/imageSlider"-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="200dp"-->
-<!--                app:layout_constraintEnd_toEndOf="parent"-->
-<!--                app:layout_constraintStart_toStartOf="parent"-->
-<!--                app:layout_constraintTop_toBottomOf="@+id/toolbar2"-->
-<!--                app:sliderAnimationDuration="600"-->
-<!--                app:sliderAutoCycleDirection="back_and_forth"-->
-<!--                app:sliderAutoCycleEnabled="false"-->
-<!--                app:sliderIndicatorAnimationDuration="600"-->
-<!--                app:sliderIndicatorGravity="center_horizontal|bottom"-->
-<!--                app:sliderIndicatorMargin="15dp"-->
-<!--                app:sliderIndicatorOrientation="horizontal"-->
-<!--                app:sliderIndicatorPadding="3dp"-->
-<!--                app:sliderIndicatorRadius="2dp"-->
-<!--                app:sliderIndicatorSelectedColor="#5A5A5A"-->
-<!--                app:sliderIndicatorUnselectedColor="#FFF"-->
-<!--                app:sliderScrollTimeInSec="1"-->
-<!--                app:sliderStartAutoCycle="false">-->
 
-<!--            </com.smarteist.autoimageslider.SliderView>-->
-<!--            <ImageView-->
-<!--                android:id="@+id/imageView"-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="200dp"-->
-<!--                app:layout_constraintStart_toStartOf="parent"-->
-<!--                app:layout_constraintTop_toBottomOf="@id/toolbar2">-->
+            <TextView
+                android:id="@+id/tvBiotipo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="Biotipo"
+                app:layout_constraintBaseline_toBaselineOf="@+id/lyBiotipo"
+                app:layout_constraintStart_toStartOf="parent" />
 
-<!--            </ImageView>-->
+            <TextView
+                android:id="@+id/tvFiotosciologia"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="Fitosociología"
+                app:layout_constraintBaseline_toBaselineOf="@+id/lyFito"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:id="@+id/tvHabitat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="Habitat"
+                app:layout_constraintBaseline_toBaselineOf="@+id/lyHabitat"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:id="@+id/tvAltitud"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="Altitud"
+                app:layout_constraintBaseline_toBaselineOf="@+id/lyAltitud"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:id="@+id/tvIdentificacion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="Identificación"
+                app:layout_constraintBaseline_toBaselineOf="@+id/lyIdentificadorFlora"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:id="@+id/tvFamilia"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="Familia"
+                app:layout_constraintBaseline_toBaselineOf="@+id/lyfamiliaFlora"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:id="@+id/tvNombreFlora"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="Nombre"
+                app:layout_constraintBaseline_toBaselineOf="@+id/lyNameFlora"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:id="@+id/tvBioRepro"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="Biologiía reproductiva"
+                app:layout_constraintBaseline_toBaselineOf="@+id/lyBioRep"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:id="@+id/tvFloracion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="Floración"
+                app:layout_constraintBaseline_toBaselineOf="@+id/lyFloracion"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:id="@+id/tvFructificion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="Fructificación"
+                app:layout_constraintBaseline_toBaselineOf="@+id/lyFructificion"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:id="@+id/tvExpSex"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="Expresión Sexual"
+                app:layout_constraintBaseline_toBaselineOf="@+id/lyExpSex"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:id="@+id/tvPolinizacion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="Polinización"
+                app:layout_constraintBaseline_toBaselineOf="@+id/lyPolinizacion"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:id="@+id/tvDispersion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="Dispersión"
+                app:layout_constraintBaseline_toBaselineOf="@+id/lyDispersion"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:id="@+id/tvNumCrom"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="Numero Cromosomático"
+                app:layout_constraintBaseline_toBaselineOf="@+id/lyNumCloro"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:id="@+id/tvRepAsex"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="Reproducción Asexual"
+                app:layout_constraintBaseline_toBaselineOf="@+id/lyReproAsex"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:id="@+id/tvDistribucion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="Distribución"
+                app:layout_constraintBaseline_toBaselineOf="@+id/lyDistribucion"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:id="@+id/tvBiología"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="Biología"
+                app:layout_constraintBaseline_toBaselineOf="@+id/lyBiologia"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:id="@+id/tvDemografia"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="Demografía"
+                app:layout_constraintBaseline_toBaselineOf="@+id/lyAmenazas"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:id="@+id/tvAmenazas"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="Amenazas"
+                app:layout_constraintBaseline_toBaselineOf="@+id/lyDemografia"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:id="@+id/tvMedidas"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="Medidas Propuestas"
+                app:layout_constraintBaseline_toBaselineOf="@+id/lyMedidas"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/lyNameFlora"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/tvNumCrom"
+                app:layout_constraintTop_toBottomOf="@+id/btImg">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etNombreFlora"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="hint" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/lyfamiliaFlora"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/lyNameFlora"
+                app:layout_constraintStart_toEndOf="@+id/tvNumCrom">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etFamiliaFlora"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="hint" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/lyIdentificadorFlora"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/lyfamiliaFlora"
+                app:layout_constraintStart_toEndOf="@+id/tvNumCrom">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etIdentificacionFlora"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="hint" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/lyAltitud"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/lyIdentificadorFlora"
+                app:layout_constraintStart_toEndOf="@+id/tvNumCrom">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etAltitudFlora"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="hint" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/lyHabitat"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/lyAltitud"
+                app:layout_constraintStart_toEndOf="@+id/tvNumCrom">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etHabitatFlora"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="hint" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/lyFito"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/lyHabitat"
+                app:layout_constraintStart_toEndOf="@+id/tvNumCrom">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etFitoFlora"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="hint" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/lyBiotipo"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/lyFito"
+                app:layout_constraintStart_toEndOf="@+id/tvNumCrom">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etBiotipoFlora"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="hint" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/lyBioRep"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/lyBiotipo"
+                app:layout_constraintStart_toEndOf="@+id/tvNumCrom">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etBioReproFlora"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="hint" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/lyFloracion"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/lyBioRep"
+                app:layout_constraintStart_toEndOf="@+id/tvNumCrom">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etFloracionFlora"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="hint" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/lyFructificion"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/lyFloracion"
+                app:layout_constraintStart_toEndOf="@+id/tvNumCrom">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etFructuacionFlora"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="hint" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/lyExpSex"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/lyFructificion"
+                app:layout_constraintStart_toEndOf="@+id/tvNumCrom">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etExprSexFlora"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="hint" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/lyPolinizacion"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/lyExpSex"
+                app:layout_constraintStart_toEndOf="@+id/tvNumCrom">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etPolinizacionFlora"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="hint" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/lyDispersion"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/lyPolinizacion"
+                app:layout_constraintStart_toEndOf="@+id/tvNumCrom">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etDispersionFlora"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="hint" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/lyNumCloro"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/lyDispersion"
+                app:layout_constraintStart_toEndOf="@+id/tvNumCrom">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etNumCromoFlora"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="hint" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/lyReproAsex"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/lyNumCloro"
+                app:layout_constraintStart_toEndOf="@+id/tvNumCrom">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etReprodAsexFlora"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="hint" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/lyDistribucion"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/lyReproAsex"
+                app:layout_constraintStart_toEndOf="@+id/tvNumCrom">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etDistribucionFlora"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="hint" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/lyBiologia"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/lyDistribucion"
+                app:layout_constraintStart_toEndOf="@+id/tvNumCrom">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etBiologiaFlora"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="hint" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/lyDemografia"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/lyBiologia"
+                app:layout_constraintStart_toEndOf="@+id/tvNumCrom">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etDemografiaFlora"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="hint" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/lyAmenazas"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/lyDemografia"
+                app:layout_constraintStart_toEndOf="@+id/tvNumCrom">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etAmenazasFlora"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="hint" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/lyMedidas"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/lyAmenazas"
+                app:layout_constraintStart_toEndOf="@+id/tvNumCrom">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etMedidasFlora"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="hint" />
+            </com.google.android.material.textfield.TextInputLayout>
+
             <com.smarteist.autoimageslider.SliderView
                 android:id="@+id/imageSlider"
                 android:layout_width="match_parent"
-                android:layout_height="300dp"
+                android:layout_height="200dp"
+                android:layout_marginTop="16dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/toolbar2"
                 app:sliderAnimationDuration="600"
                 app:sliderAutoCycleDirection="back_and_forth"
-                app:sliderAutoCycleEnabled="true"
+                app:sliderAutoCycleEnabled="false"
                 app:sliderIndicatorAnimationDuration="600"
                 app:sliderIndicatorGravity="center_horizontal|bottom"
                 app:sliderIndicatorMargin="15dp"
@@ -87,282 +541,21 @@
                 app:sliderIndicatorSelectedColor="#5A5A5A"
                 app:sliderIndicatorUnselectedColor="#FFF"
                 app:sliderScrollTimeInSec="1"
-                app:sliderStartAutoCycle="true">
+                app:sliderStartAutoCycle="false">
 
             </com.smarteist.autoimageslider.SliderView>
 
-            <EditText
-                android:id="@+id/etNombreFlora"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="16dp"
-                android:layout_marginEnd="16dp"
-                android:ems="10"
-                android:inputType="textPersonName"
-                android:minHeight="48dp"
-                android:text="Nombre"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/btImg" />
-
-            <EditText
-                android:id="@+id/etFamiliaFlora"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginEnd="16dp"
-                android:ems="10"
-                android:inputType="textPersonName"
-                android:text="Familia"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/etNombreFlora" />
-
-            <EditText
-                android:id="@+id/etIdentificacionFlora"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginEnd="16dp"
-                android:ems="10"
-                android:inputType="textPersonName"
-                android:text="Identificación"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/etFamiliaFlora" />
-
-            <EditText
-                android:id="@+id/etAltitudFlora"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginEnd="16dp"
-                android:ems="10"
-                android:inputType="textPersonName"
-                android:text="Altitud"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/etIdentificacionFlora" />
-
-            <EditText
-                android:id="@+id/etHabitatFlora"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginEnd="16dp"
-                android:ems="10"
-                android:inputType="textPersonName"
-                android:text="Habitat"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/etAltitudFlora" />
-
-            <EditText
-                android:id="@+id/etFitoFlora"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginEnd="16dp"
-                android:ems="10"
-                android:inputType="textPersonName"
-                android:text="Fitosociología"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/etHabitatFlora" />
-
-            <EditText
-                android:id="@+id/etBiotipoFlora"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginEnd="16dp"
-                android:ems="10"
-                android:inputType="textPersonName"
-                android:text="Biotipo"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/etFitoFlora" />
-
-            <EditText
-                android:id="@+id/etBioReproFlora"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginEnd="16dp"
-                android:ems="10"
-                android:inputType="textPersonName"
-                android:text="Biología Reproductiva"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/etBiotipoFlora" />
-
-            <EditText
-                android:id="@+id/etFloracionFlora"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:inputType="textPersonName"
-                android:text="Floración"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/etBioReproFlora"
-                android:layout_marginStart="16dp"
-                android:layout_marginEnd="16dp"/>
-
-            <EditText
-                android:id="@+id/etFructuacionFlora"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:inputType="textPersonName"
-                android:text="Fructificación"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/etFloracionFlora"
-                android:layout_marginStart="16dp"
-                android:layout_marginEnd="16dp"/>
-
-            <EditText
-                android:id="@+id/etExprSexFlora"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
-                android:ems="10"
-                android:inputType="textPersonName"
-                android:text="Expresión Sexual"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/etFructuacionFlora"
-                android:layout_marginStart="16dp"
-                android:layout_marginEnd="16dp"/>
-
-            <EditText
-                android:id="@+id/etPolinizacionFlora"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:inputType="textPersonName"
-                android:text="Polinización"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/etExprSexFlora"
-                android:layout_marginStart="16dp"
-                android:layout_marginEnd="16dp"/>
-
-            <EditText
-                android:id="@+id/etDispersionFlora"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:inputType="textPersonName"
-                android:text="Dispersión"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/etPolinizacionFlora"
-                android:layout_marginStart="16dp"
-                android:layout_marginEnd="16dp"/>
-
-            <EditText
-                android:id="@+id/etNumCromoFlora"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:inputType="textPersonName"
-                android:text="Número Cromosomático"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/etDistribucionFlora"
-                android:layout_marginStart="16dp"
-                android:layout_marginEnd="16dp"/>
-
-            <EditText
-                android:id="@+id/etReprodAsexFlora"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:inputType="textPersonName"
-                android:text="Reproducción Asexual"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/etNumCromoFlora"
-                android:layout_marginStart="16dp"
-                android:layout_marginEnd="16dp"/>
-
-            <EditText
-                android:id="@+id/etDistribucionFlora"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:inputType="textPersonName"
-                android:text="Distribución"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/etDispersionFlora"
-                android:layout_marginStart="16dp"
-                android:layout_marginEnd="16dp"/>
-
-            <EditText
-                android:id="@+id/etBiologiaFlora"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:inputType="textPersonName"
-                android:text="Biología"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/etReprodAsexFlora"
-                android:layout_marginStart="16dp"
-                android:layout_marginEnd="16dp"/>
-
-            <EditText
-                android:id="@+id/etDemografiaFlora"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:inputType="textPersonName"
-                android:text="Demografía"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/etBiologiaFlora"
-                android:layout_marginStart="16dp"
-                android:layout_marginEnd="16dp"/>
-
-            <EditText
-                android:id="@+id/etAmenazasFlora"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:inputType="textPersonName"
-                android:text="Amenazas"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/etDemografiaFlora"
-                android:layout_marginStart="16dp"
-                android:layout_marginEnd="16dp"/>
-
-            <EditText
-                android:id="@+id/etMedidasFlora"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:inputType="textPersonName"
-                android:text="Medidas propuestas"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/etAmenazasFlora"
-                android:layout_marginStart="16dp"
-                android:layout_marginEnd="16dp"/>
 
             <Button
                 android:id="@+id/btSave"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="32dp"
+                android:layout_marginTop="16dp"
                 android:text="Guardar"
+                android:visibility="gone"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/etMedidasFlora" />
+                app:layout_constraintTop_toBottomOf="@+id/lyMedidas" />
 
             <Button
                 android:id="@+id/btImg"

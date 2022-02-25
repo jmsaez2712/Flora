@@ -43,6 +43,7 @@ public class Repository {
     private MutableLiveData<ImageRowResponse> imagesLiveData = new MutableLiveData<>();
     private MutableLiveData<DeleteResponse> deleteLiveData = new MutableLiveData<>();
     private MutableLiveData<Integer> secondDelete = new MutableLiveData<>();
+    private MutableLiveData<RowsResponse> editLiveData = new MutableLiveData<>();
 
     public Repository(Context context){
         this.context = context;
@@ -111,7 +112,18 @@ public class Repository {
     }
 
     public void editFlora(long id, Flora flora){
-        floraClient.editFlora(id, flora);
+        Call<RowsResponse> edit = floraClient.editFlora(id, flora);
+        edit.enqueue(new Callback<RowsResponse>() {
+            @Override
+            public void onResponse(Call<RowsResponse> call, Response<RowsResponse> response) {
+                editLiveData.setValue(response.body());
+            }
+
+            @Override
+            public void onFailure(Call<RowsResponse> call, Throwable t) {
+
+            }
+        });
     }
 
     public MutableLiveData<ArrayList<Flora>> getFloraLiveData(){
@@ -174,6 +186,8 @@ public class Repository {
         return result;
     }
 
+
+
     public void getImages(long id){
         Call<ImageRowResponse> images = floraClient.getImages(id);
         images.enqueue(new Callback<ImageRowResponse>() {
@@ -189,6 +203,9 @@ public class Repository {
         });
     }
 
+    public MutableLiveData<RowsResponse> getEditLiveData() {
+        return editLiveData;
+    }
     public MutableLiveData<ImageRowResponse> getImagesLiveData(){
         return this.imagesLiveData;
     }
