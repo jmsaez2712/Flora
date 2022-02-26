@@ -48,7 +48,6 @@ public class FloraDetailFragment extends Fragment {
     private TextInputEditText etName, etFamilia, etIdentificacion, etAltitud, etHabitat, etFitosociologia, etBiotipo,
             etBiologiaReprod, etFloracion, etFructificacion, etExprSex, etPolinizacion, etDispersion, etNumCromo,
             etReprAsex, etDistribucion, etBiologia, etDemografia, etAmenazas, etMedidas;
-
     private Flora flora;
     private AddImagenViewModel aivm;
     private MainActivityViewModel mavm;
@@ -90,6 +89,7 @@ public class FloraDetailFragment extends Fragment {
         Bundle bundle = getArguments();
         flora = bundle.getParcelable("flora");
 
+        toolbar.setTitle(flora.getNombre());
         aivm.getImages(flora.getId());
         images.observe(this, image->{
             for (int i = 0; i < image.rows.length; i++) {
@@ -240,7 +240,6 @@ public class FloraDetailFragment extends Fragment {
 
             case R.id.save_opt:{
                 updateFlora();
-
                 return true;
             }
 
@@ -317,12 +316,11 @@ public class FloraDetailFragment extends Fragment {
     }
 
     void editObserver(){
-
         mavm.getEditLiveData().observe(this, edit->{
             if(resultadoImagen != null) {
                 uploadDataImage(flora.getId());
             }
-            NavHostFragment.findNavController(this).popBackStack();
+            NavHostFragment.findNavController(this).navigate(R.id.action_SecondFragment_to_FirstFragment);
         });
     }
 }

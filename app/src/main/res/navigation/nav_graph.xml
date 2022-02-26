@@ -17,9 +17,6 @@
         <action
             android:id="@+id/action_FirstFragment_to_addFloraFragment"
             app:destination="@id/addFloraFragment" />
-        <action
-            android:id="@+id/action_FirstFragment_to_addImageFragment"
-            app:destination="@id/addImageFragment" />
     </fragment>
     <fragment
         android:id="@+id/SecondFragment"
@@ -34,11 +31,6 @@
     <fragment
         android:id="@+id/addFloraFragment"
         android:name="dev.jmsaez.florafragments.AddFloraFragment"
-        android:label="fragment_add_flora"
+        android:label="Añadir Flora"
         tools:layout="@layout/fragment_add_flora" />
-    <fragment
-        android:id="@+id/addImageFragment"
-        android:name="dev.jmsaez.florafragments.AddImageFragment"
-        android:label="fragment_add_image"
-        tools:layout="@layout/fragment_add_image" />
 </navigation>
