@@ -103,10 +103,7 @@ public class FirstFragment extends Fragment {
             NavHostFragment.findNavController(this).navigate(R.id.action_FirstFragment_to_addFloraFragment);
         });
 
-        fabImg = view.findViewById(R.id.fabImg);
-        fabImg.setOnClickListener(e->{
-            NavHostFragment.findNavController(this).navigate(R.id.action_FirstFragment_to_addImageFragment);
-        });
+
 
         MutableLiveData<Integer> delete = mavm.getSecondDelete();
         delete.observe(FirstFragment.this, integer -> {

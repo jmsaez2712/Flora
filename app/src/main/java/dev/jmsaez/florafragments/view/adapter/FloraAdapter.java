@@ -12,6 +12,7 @@ import androidx.recyclerview.selection.SelectionTracker;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
@@ -50,7 +51,9 @@ public class FloraAdapter extends RecyclerView.Adapter<FloraViewHolder> {
 
         Log.v("::FLORAID", flora.getId()+"");
         Log.v(":::URLID", URL_IMG + flora.getId()+"/flora");
-        Glide.with(context).load(URL_IMG + flora.getId()+"/flora").into(holder.ivFlora);
+
+//        Glide.with(context).load(URL_IMG + flora.getId()+"/flora").into(holder.ivFlora);
+        Picasso.get().load(URL_IMG + flora.getId()+"/flora").into(holder.ivFlora);
         holder.tvFlora.setText(flora.getNombre());
 
         if(tracker.isSelected((long) position)){

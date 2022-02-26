@@ -8,11 +8,6 @@
         android:title="Cancel"
         app:showAsAction="always" />
     <item
-        android:id="@+id/image_opt"
-        android:icon="@drawable/add_photo_24"
-        android:title="Item"
-        app:showAsAction="always" />
-    <item
         android:id="@+id/save_opt"
         android:icon="@drawable/check_24"
         android:title="Save"

@@ -12,6 +12,9 @@
         <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
+        <item name="materialCardViewStyle">@style/card</item>
+        <item name="materialButtonStyle">@style/buttonStyle</item>
+        <item name="textInputStyle">@style/editText</item>
     </style>
 
     <style name="Theme.FloraFragments.NoActionBar">
@@ -22,4 +25,27 @@
     <style name="Theme.FloraFragments.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <style name="Theme.FloraFragments.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="card" parent="Widget.MaterialComponents.CardView">
+        <item name="cardElevation">2dp</item>
+        <item name="shapeAppearance">@style/cornerCard</item>
+    </style>
+
+    <style name="cornerCard" parent="ShapeAppearance.MaterialComponents.MediumComponent">
+        <item name="cornerFamily">cut</item>
+        <item name="cornerSize">10dp</item>
+    </style>
+    <style name="buttonStyle" parent="Widget.MaterialComponents.Button">
+        <item name="android:elevation">5dp</item>
+        <item name="shapeAppearance">@style/cornerButton</item>
+    </style>
+
+    <style name="cornerButton" parent="ShapeAppearance.MaterialComponents.MediumComponent">
+        <item name="cornerFamily">cut</item>
+        <item name="cornerSize">5dp</item>
+    </style>
+
+    <style name="editText" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="android:backgroundTint">@color/white</item>
+    </style>
 </resources>

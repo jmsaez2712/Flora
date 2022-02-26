@@ -29,6 +29,7 @@ import com.google.android.material.textfield.TextInputEditText;
 import com.smarteist.autoimageslider.SliderView;
 
 import java.util.ArrayList;
+import java.util.Date;
 
 import dev.jmsaez.florafragments.databinding.FragmentSecondBinding;
 import dev.jmsaez.florafragments.model.entity.Flora;
@@ -44,9 +45,10 @@ public class FloraDetailFragment extends Fragment {
     final String URL_IMG = "https://informatica.ieszaidinvergeles.org:10016/AD/felixRDLFapp/public/api/imagen/";
     private FragmentSecondBinding binding;
 
-    private TextInputEditText etName, etFamilia, etIdentificacion, etAltitud, etHabitat, etFitosociologia, etBiotipo
-            , etBiologiaReprod, etFloracion, etFructificacion, etExprSex, etPolinizacion, etDispersion, etNumCromo,
+    private TextInputEditText etName, etFamilia, etIdentificacion, etAltitud, etHabitat, etFitosociologia, etBiotipo,
+            etBiologiaReprod, etFloracion, etFructificacion, etExprSex, etPolinizacion, etDispersion, etNumCromo,
             etReprAsex, etDistribucion, etBiologia, etDemografia, etAmenazas, etMedidas;
+
     private Flora flora;
     private AddImagenViewModel aivm;
     private MainActivityViewModel mavm;
@@ -141,7 +143,6 @@ public class FloraDetailFragment extends Fragment {
 
     void showItem(){
         etName.setText(flora.getNombre()+"");
-        etName.setBackground(null);
         etFamilia.setText(flora.getFamilia()+"");
         etIdentificacion.setText(flora.getIdentificacion()+"");
         etAltitud.setText(flora.getAltitud()+"");
@@ -250,10 +251,6 @@ public class FloraDetailFragment extends Fragment {
                 toolbar.inflateMenu(R.menu.edit_delete_menu);
                 return true;
             }
-
-            case R.id.image_opt:{
-
-            }
         }
 
         return false;
@@ -313,7 +310,7 @@ public class FloraDetailFragment extends Fragment {
 
     private void uploadDataImage(long id) {
         Imagen imagen = new Imagen();
-        imagen.nombre = "nombre";
+        imagen.nombre = String.valueOf(new Date().getTime());
         imagen.descripcion = "descripcion";
         imagen.idflora = id;
         aivm.saveImagen(resultadoImagen, imagen);
@@ -323,7 +320,7 @@ public class FloraDetailFragment extends Fragment {
 
         mavm.getEditLiveData().observe(this, edit->{
             if(resultadoImagen != null) {
-                uploadDataImage(edit.id);
+                uploadDataImage(flora.getId());
             }
             NavHostFragment.findNavController(this).popBackStack();
         });

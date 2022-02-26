@@ -2,21 +2,13 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/constraintLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".AddFloraFragment">
 
-    <ProgressBar
-        android:id="@+id/progressBar2"
-        style="@style/Widget.AppCompat.ProgressBar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <androidx.core.widget.NestedScrollView
+        android:id="@+id/nestedScrollView"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:fillViewport="false"
@@ -40,186 +32,6 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
 
-            <TextView
-                android:id="@+id/tvBiotipoAdd"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:text="Biotipo"
-                app:layout_constraintBaseline_toBaselineOf="@+id/lyBiotipoAdd"
-                app:layout_constraintStart_toStartOf="parent" />
-
-            <TextView
-                android:id="@+id/tvFiotosciologiaAdd"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:text="Fitosociología"
-                app:layout_constraintBaseline_toBaselineOf="@+id/lyFitoAdd"
-                app:layout_constraintStart_toStartOf="parent" />
-
-            <TextView
-                android:id="@+id/tvHabitatAdd"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:text="Habitat"
-                app:layout_constraintBaseline_toBaselineOf="@+id/lyHabitatAdd"
-                app:layout_constraintStart_toStartOf="parent" />
-
-            <TextView
-                android:id="@+id/tvAltitudAdd"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:text="Altitud"
-                app:layout_constraintBaseline_toBaselineOf="@+id/lyAltitudAdd"
-                app:layout_constraintStart_toStartOf="parent" />
-
-            <TextView
-                android:id="@+id/tvIdentificacionAdd"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:text="Identificación"
-                app:layout_constraintBaseline_toBaselineOf="@+id/lyIdentificadorFloraAdd"
-                app:layout_constraintStart_toStartOf="parent" />
-
-            <TextView
-                android:id="@+id/tvFamiliaAdd"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:text="Familia"
-                app:layout_constraintBaseline_toBaselineOf="@+id/lyfamiliaFloraAdd"
-                app:layout_constraintStart_toStartOf="parent" />
-
-            <TextView
-                android:id="@+id/tvNombreFloraAdd"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:text="Nombre"
-                app:layout_constraintBaseline_toBaselineOf="@+id/lyNameFloraAdd"
-                app:layout_constraintStart_toStartOf="parent" />
-
-            <TextView
-                android:id="@+id/tvBioReproAdd"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:text="Biologiía reproductiva"
-                app:layout_constraintBaseline_toBaselineOf="@+id/lyBioRepAdd"
-                app:layout_constraintStart_toStartOf="parent" />
-
-            <TextView
-                android:id="@+id/tvFloracionAdd"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:text="Floración"
-                app:layout_constraintBaseline_toBaselineOf="@+id/lyFloracionAdd"
-                app:layout_constraintStart_toStartOf="parent" />
-
-            <TextView
-                android:id="@+id/tvFructificionAdd"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:text="Fructificación"
-                app:layout_constraintBaseline_toBaselineOf="@+id/lyFructificionAdd"
-                app:layout_constraintStart_toStartOf="parent" />
-
-            <TextView
-                android:id="@+id/tvExpSexAdd"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:text="Expresión Sexual"
-                app:layout_constraintBaseline_toBaselineOf="@+id/lyExpSexAdd"
-                app:layout_constraintStart_toStartOf="parent" />
-
-            <TextView
-                android:id="@+id/tvPolinizacionAdd"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:text="Polinización"
-                app:layout_constraintBaseline_toBaselineOf="@+id/lyPolinizacionAdd"
-                app:layout_constraintStart_toStartOf="parent" />
-
-            <TextView
-                android:id="@+id/tvDispersionAdd"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:text="Dispersión"
-                app:layout_constraintBaseline_toBaselineOf="@+id/lyDispersionAdd"
-                app:layout_constraintStart_toStartOf="parent" />
-
-            <TextView
-                android:id="@+id/tvNumCromAdd"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:text="Numero Cromosomático"
-                app:layout_constraintBaseline_toBaselineOf="@+id/lyNumCloroAdd"
-                app:layout_constraintStart_toStartOf="parent" />
-
-            <TextView
-                android:id="@+id/tvRepAsexAdd"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:text="Reproducción Asexual"
-                app:layout_constraintBaseline_toBaselineOf="@+id/lyReproAsexAdd"
-                app:layout_constraintStart_toStartOf="parent" />
-
-            <TextView
-                android:id="@+id/tvDistribucionAdd"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:text="Distribución"
-                app:layout_constraintBaseline_toBaselineOf="@+id/lyDistribucionAdd"
-                app:layout_constraintStart_toStartOf="parent" />
-
-            <TextView
-                android:id="@+id/tvBiologíaAdd"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:text="Biología"
-                app:layout_constraintBaseline_toBaselineOf="@+id/lyBiologiaAdd"
-                app:layout_constraintStart_toStartOf="parent" />
-
-            <TextView
-                android:id="@+id/tvDemografiaAdd"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:text="Demografía"
-                app:layout_constraintBaseline_toBaselineOf="@+id/lyAmenazasAdd"
-                app:layout_constraintStart_toStartOf="parent" />
-
-            <TextView
-                android:id="@+id/tvAmenazasAdd"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:text="Amenazas"
-                app:layout_constraintBaseline_toBaselineOf="@+id/lyDemografiaAdd"
-                app:layout_constraintStart_toStartOf="parent" />
-
-            <TextView
-                android:id="@+id/tvMedidasAddAdd"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:text="Medidas Propuestas"
-                app:layout_constraintBaseline_toBaselineOf="@+id/lyMedidasAdd"
-                app:layout_constraintStart_toStartOf="parent" />
-
             <Button
                 android:id="@+id/btAddImg"
                 android:layout_width="wrap_content"
@@ -234,10 +46,13 @@
                 android:id="@+id/lyNameFloraAdd"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
+                android:layout_marginStart="16dp"
                 android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:background="#00FFFFFF"
+                app:boxBackgroundMode="outline"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/tvNumCromAdd"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/btAddImg">
 
                 <com.google.android.material.textfield.TextInputEditText
@@ -251,9 +66,13 @@
                 android:id="@+id/lyfamiliaFloraAdd"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                app:boxBackgroundMode="outline"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/lyNameFloraAdd"
-                app:layout_constraintStart_toEndOf="@+id/tvNumCromAdd">
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/lyNameFloraAdd">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/etFamiliaAdd"
@@ -266,9 +85,13 @@
                 android:id="@+id/lyIdentificadorFloraAdd"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                app:boxBackgroundMode="outline"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/lyfamiliaFloraAdd"
-                app:layout_constraintStart_toEndOf="@+id/tvNumCromAdd">
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/lyfamiliaFloraAdd">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/etIdentificacionAdd"
@@ -281,9 +104,13 @@
                 android:id="@+id/lyAltitudAdd"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                app:boxBackgroundMode="outline"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/lyIdentificadorFloraAdd"
-                app:layout_constraintStart_toEndOf="@+id/tvNumCromAdd">
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/lyIdentificadorFloraAdd">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/etAltitudAdd"
@@ -296,9 +123,13 @@
                 android:id="@+id/lyHabitatAdd"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                app:boxBackgroundMode="outline"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/lyAltitudAdd"
-                app:layout_constraintStart_toEndOf="@+id/tvNumCromAdd">
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/lyAltitudAdd">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/etHabitatAdd"
@@ -311,9 +142,13 @@
                 android:id="@+id/lyFitoAdd"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                app:boxBackgroundMode="outline"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/lyHabitatAdd"
-                app:layout_constraintStart_toEndOf="@+id/tvNumCromAdd">
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/lyHabitatAdd">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/etFitoAdd"
@@ -326,9 +161,13 @@
                 android:id="@+id/lyBiotipoAdd"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                app:boxBackgroundMode="outline"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/lyFitoAdd"
-                app:layout_constraintStart_toEndOf="@+id/tvNumCromAdd">
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/lyFitoAdd">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/etBiotipoAdd"
@@ -341,9 +180,13 @@
                 android:id="@+id/lyBioRepAdd"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                app:boxBackgroundMode="outline"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/lyBiotipoAdd"
-                app:layout_constraintStart_toEndOf="@+id/tvNumCromAdd">
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/lyBiotipoAdd">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/etBioReproAdd"
@@ -356,9 +199,13 @@
                 android:id="@+id/lyFloracionAdd"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                app:boxBackgroundMode="outline"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/lyBioRepAdd"
-                app:layout_constraintStart_toEndOf="@+id/tvNumCromAdd">
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/lyBioRepAdd">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/etFloracionAdd"
@@ -371,9 +218,13 @@
                 android:id="@+id/lyFructificionAdd"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                app:boxBackgroundMode="outline"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/lyFloracionAdd"
-                app:layout_constraintStart_toEndOf="@+id/tvNumCromAdd">
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/lyFloracionAdd">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/etFructuacionAdd"
@@ -386,9 +237,13 @@
                 android:id="@+id/lyExpSexAdd"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                app:boxBackgroundMode="outline"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/lyFructificionAdd"
-                app:layout_constraintStart_toEndOf="@+id/tvNumCromAdd">
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/lyFructificionAdd">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/etExprSexAdd"
@@ -401,9 +256,13 @@
                 android:id="@+id/lyPolinizacionAdd"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                app:boxBackgroundMode="outline"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/lyExpSexAdd"
-                app:layout_constraintStart_toEndOf="@+id/tvNumCromAdd">
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/lyExpSexAdd">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/etPolinizacionAdd"
@@ -416,9 +275,13 @@
                 android:id="@+id/lyDispersionAdd"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                app:boxBackgroundMode="outline"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/lyPolinizacionAdd"
-                app:layout_constraintStart_toEndOf="@+id/tvNumCromAdd">
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/lyPolinizacionAdd">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/etDispersionAdd"
@@ -431,9 +294,13 @@
                 android:id="@+id/lyNumCloroAdd"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                app:boxBackgroundMode="outline"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/lyDispersionAdd"
-                app:layout_constraintStart_toEndOf="@+id/tvNumCromAdd">
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/lyDispersionAdd">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/etNumCromoAdd"
@@ -446,9 +313,13 @@
                 android:id="@+id/lyReproAsexAdd"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                app:boxBackgroundMode="outline"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/lyNumCloroAdd"
-                app:layout_constraintStart_toEndOf="@+id/tvNumCromAdd">
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/lyNumCloroAdd">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/etReprodAsexAdd"
@@ -461,9 +332,13 @@
                 android:id="@+id/lyDistribucionAdd"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                app:boxBackgroundMode="outline"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/lyReproAsexAdd"
-                app:layout_constraintStart_toEndOf="@+id/tvNumCromAdd">
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/lyReproAsexAdd">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/etDistribucionAdd"
@@ -476,9 +351,13 @@
                 android:id="@+id/lyBiologiaAdd"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                app:boxBackgroundMode="outline"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/lyDistribucionAdd"
-                app:layout_constraintStart_toEndOf="@+id/tvNumCromAdd">
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/lyDistribucionAdd">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/etBiologiaAdd"
@@ -491,9 +370,13 @@
                 android:id="@+id/lyDemografiaAdd"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                app:boxBackgroundMode="outline"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/lyBiologiaAdd"
-                app:layout_constraintStart_toEndOf="@+id/tvNumCromAdd">
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/lyBiologiaAdd">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/etDemografiaAdd"
@@ -506,9 +389,13 @@
                 android:id="@+id/lyAmenazasAdd"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                app:boxBackgroundMode="outline"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/lyDemografiaAdd"
-                app:layout_constraintStart_toEndOf="@+id/tvNumCromAdd">
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/lyDemografiaAdd">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/etAmenazasAdd"
@@ -521,9 +408,13 @@
                 android:id="@+id/lyMedidasAdd"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                app:boxBackgroundMode="outline"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/lyAmenazasAdd"
-                app:layout_constraintStart_toEndOf="@+id/tvNumCromAdd">
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/lyAmenazasAdd">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/etMedidasAdd"
@@ -534,5 +425,15 @@
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.core.widget.NestedScrollView>
+
+    <ProgressBar
+        android:id="@+id/progressBar2"
+        style="@style/Widget.AppCompat.ProgressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/nestedScrollView" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
