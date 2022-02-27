@@ -76,7 +76,7 @@ public class AddFloraFragment extends Fragment {
         afvm = new ViewModelProvider(this).get(AddFloraViewModel.class);
         aivm = new ViewModelProvider(this).get(AddImagenViewModel.class);
         toolbar = view.findViewById(R.id.toolbar3);
-        toolbar.inflateMenu(R.menu.edit_menu);
+        toolbar.inflateMenu(R.menu.add_menu);
         toolbar.setOnMenuItemClickListener( item -> {return onOptionsItemSelected(item);});
         etName = view.findViewById(R.id.etNombreAdd);
         etFamilia = view.findViewById(R.id.etFamiliaAdd);
@@ -146,7 +146,7 @@ public class AddFloraFragment extends Fragment {
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
 
         switch (item.getItemId()){
-            case R.id.save_opt:{
+            case R.id.saveoption_flora:{
                 createFlora();
                 return true;
             }
