@@ -1,10 +1,14 @@
 package dev.jmsaez.florafragments;
 
+import static android.content.Context.UI_MODE_SERVICE;
+
+import android.app.UiModeManager;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.ActionMode;
 import android.view.LayoutInflater;
 import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
@@ -53,6 +57,7 @@ public class FirstFragment extends Fragment {
     private MutableLiveData<ArrayList<Flora>> floraList;
     private ActionMode.Callback actionModeCallback;
     private ProgressBar progressBar;
+    private UiModeManager uiModeManager;
     private FragmentFirstBinding binding;
 
     @Override
@@ -79,7 +84,11 @@ public class FirstFragment extends Fragment {
 
     private void initialize(View view) {
 
+        uiModeManager = (UiModeManager) view.getContext().getSystemService(UI_MODE_SERVICE);
+
         toolbar = view.findViewById(R.id.toolbar);
+        toolbar.inflateMenu(R.menu.app_mode);
+        toolbar.setOnMenuItemClickListener(item -> onOptionsItemSelected(item));
         progressBar = view.findViewById(R.id.progressBar);
         mavm = new ViewModelProvider(this).get(MainActivityViewModel.class);
 
@@ -194,5 +203,33 @@ public class FirstFragment extends Fragment {
     public void refreshFragment(){
         NavHostFragment.findNavController(FirstFragment.this).popBackStack();
         NavHostFragment.findNavController(FirstFragment.this).navigate(R.id.main_fragment);
+    }
+
+
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        if(item.getItemId() == R.id.mode_opt){
+            switch (uiModeManager.getNightMode()){
+                case UiModeManager.MODE_NIGHT_YES:{
+                    NightModeOFF();
+                    return true;
+                }
+                case UiModeManager.MODE_NIGHT_NO:{
+                    NightModeON();
+                    return true;
+                }
+            }
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+
+    public void NightModeON(){
+        uiModeManager.setNightMode(UiModeManager.MODE_NIGHT_YES);
+    }
+
+    public void NightModeOFF(){
+        uiModeManager.setNightMode(UiModeManager.MODE_NIGHT_NO);
     }
 }
