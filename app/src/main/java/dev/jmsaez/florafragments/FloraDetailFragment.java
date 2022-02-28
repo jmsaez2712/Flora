@@ -3,9 +3,10 @@ package dev.jmsaez.florafragments;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.Menu;
-import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
@@ -26,6 +27,7 @@ import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
 import com.google.android.material.textfield.TextInputEditText;
+import com.google.android.material.textfield.TextInputLayout;
 import com.smarteist.autoimageslider.SliderView;
 
 import java.util.ArrayList;
@@ -48,6 +50,7 @@ public class FloraDetailFragment extends Fragment {
     private TextInputEditText etName, etFamilia, etIdentificacion, etAltitud, etHabitat, etFitosociologia, etBiotipo,
             etBiologiaReprod, etFloracion, etFructificacion, etExprSex, etPolinizacion, etDispersion, etNumCromo,
             etReprAsex, etDistribucion, etBiologia, etDemografia, etAmenazas, etMedidas;
+    private TextInputLayout lyNombreFlora;
     private Flora flora;
     private AddImagenViewModel aivm;
     private MainActivityViewModel mavm;
@@ -101,7 +104,7 @@ public class FloraDetailFragment extends Fragment {
 
         initialize(view);
         showItem();
-        setStyle();
+        setNotEditable();
     }
 
     void initialize(View view){
@@ -128,6 +131,10 @@ public class FloraDetailFragment extends Fragment {
         etAmenazas = view.findViewById(R.id.etAmenazasFlora);
         etMedidas = view.findViewById(R.id.etMedidasFlora);
 
+        lyNombreFlora = view.findViewById(R.id.lyNameFlora);
+        lyNombreFlora.setErrorEnabled(false);
+        lyNombreFlora.setHelperText("* Este campo es obligatorio");
+
         btImg = view.findViewById(R.id.btImg);
         btImg.setOnClickListener( l ->{
             selectImage();
@@ -142,29 +149,29 @@ public class FloraDetailFragment extends Fragment {
     }
 
     void showItem(){
-        etName.setText(flora.getNombre()+"");
-        etFamilia.setText(flora.getFamilia()+"");
-        etIdentificacion.setText(flora.getIdentificacion()+"");
-        etAltitud.setText(flora.getAltitud()+"");
-        etHabitat.setText(flora.getHabitat()+"");
-        etFitosociologia.setText(flora.getFitosociologia()+"");
-        etBiotipo.setText(flora.getBiotipo()+"");
-        etBiologiaReprod.setText(flora.getBiologia_reproductiva()+"");
-        etFloracion.setText(flora.getFloracion()+"");
-        etFructificacion.setText(flora.getFructificacion()+"");
-        etExprSex.setText(flora.getExpresion_sexual()+"");
-        etPolinizacion.setText(flora.getPolinizacion()+"");
-        etDispersion.setText(flora.getDispersion()+"");
-        etNumCromo.setText(flora.getNumero_cromosomatico()+"");
-        etReprAsex.setText(flora.getReproduccion_asexual()+"");
-        etDistribucion.setText(flora.getDistribucion()+"");
-        etBiologia.setText(flora.getBiologia()+"");
-        etDemografia.setText(flora.getDemografia()+"");
-        etAmenazas.setText(flora.getAmenazas()+"");
-        etMedidas.setText(flora.getMedidas_propuestas()+"");
+        etName.setText(flora.getNombre());
+        etFamilia.setText(flora.getFamilia());
+        etIdentificacion.setText(flora.getIdentificacion());
+        etAltitud.setText(flora.getAltitud());
+        etHabitat.setText(flora.getHabitat());
+        etFitosociologia.setText(flora.getFitosociologia());
+        etBiotipo.setText(flora.getBiotipo());
+        etBiologiaReprod.setText(flora.getBiologia_reproductiva());
+        etFloracion.setText(flora.getFloracion());
+        etFructificacion.setText(flora.getFructificacion());
+        etExprSex.setText(flora.getExpresion_sexual());
+        etPolinizacion.setText(flora.getPolinizacion());
+        etDispersion.setText(flora.getDispersion());
+        etNumCromo.setText(flora.getNumero_cromosomatico());
+        etReprAsex.setText(flora.getReproduccion_asexual());
+        etDistribucion.setText(flora.getDistribucion());
+        etBiologia.setText(flora.getBiologia());
+        etDemografia.setText(flora.getDemografia());
+        etAmenazas.setText(flora.getAmenazas());
+        etMedidas.setText(flora.getMedidas_propuestas());
     }
 
-    void setStyle(){
+    void setNotEditable(){
         btImg.setVisibility(View.GONE);
         etName.setEnabled(false);
         etFamilia.setEnabled(false);
@@ -188,7 +195,7 @@ public class FloraDetailFragment extends Fragment {
         etMedidas.setEnabled(false);
     }
 
-    void unsetStyle(){
+    void setEditable(){
         btImg.setVisibility(View.VISIBLE);
         etName.setEnabled(true);
         etFamilia.setEnabled(true);
@@ -231,7 +238,7 @@ public class FloraDetailFragment extends Fragment {
                 return true;
             }
             case R.id.edit_option:{
-                unsetStyle();
+                setEditable();
                 Menu menu = toolbar.getMenu();
                 menu.clear();
                 toolbar.inflateMenu(R.menu.edit_menu);
@@ -246,7 +253,7 @@ public class FloraDetailFragment extends Fragment {
             case R.id.cancel_option:{
                 Menu menu = toolbar.getMenu();
                 menu.clear();
-                setStyle();
+                setNotEditable();
                 toolbar.inflateMenu(R.menu.edit_delete_menu);
                 return true;
             }
@@ -279,7 +286,13 @@ public class FloraDetailFragment extends Fragment {
         flora.setAmenazas(etAmenazas.getText().toString());
         flora.setMedidas_propuestas(etMedidas.getText().toString());
 
-        mavm.editFlora(flora.getId(), flora);
+        if(etName.getText().toString().trim().isEmpty()){
+            lyNombreFlora.setError("Este campo no puede estar vacío");
+            lyNombreFlora.setErrorEnabled(true);
+        } else {
+            mavm.editFlora(flora.getId(), flora);
+        }
+
     }
 
     ActivityResultLauncher<Intent> getLauncher() {
@@ -321,6 +334,27 @@ public class FloraDetailFragment extends Fragment {
                 uploadDataImage(flora.getId());
             }
             NavHostFragment.findNavController(this).navigate(R.id.action_SecondFragment_to_FirstFragment);
+        });
+    }
+
+    void textListener(){
+        etName.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+                if(editable.length() >= 0){
+                    lyNombreFlora.setErrorEnabled(false);
+                }
+            }
         });
     }
 }

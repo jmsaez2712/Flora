@@ -17,6 +17,8 @@ import androidx.navigation.fragment.NavHostFragment;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -27,6 +29,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.google.android.material.textfield.TextInputEditText;
+import com.google.android.material.textfield.TextInputLayout;
 
 import dev.jmsaez.florafragments.model.entity.Flora;
 import dev.jmsaez.florafragments.model.entity.Imagen;
@@ -39,6 +42,7 @@ public class AddFloraFragment extends Fragment {
     private TextInputEditText etName, etFamilia, etIdentificacion, etAltitud, etHabitat, etFitosociologia, etBiotipo
             , etBiologiaReprod, etFloracion, etFructificacion, etExprSex, etPolinizacion, etDispersion, etNumCromo,
             etReprAsex, etDistribucion, etBiologia, etDemografia, etAmenazas, etMedidas;
+    private TextInputLayout lyNombreFlora;
     Button btImg;
     private Toolbar toolbar;
     private AddFloraViewModel afvm;
@@ -99,13 +103,17 @@ public class AddFloraFragment extends Fragment {
         etAmenazas = view.findViewById(R.id.etAmenazasAdd);
         etMedidas = view.findViewById(R.id.etMedidasAdd);
 
+        lyNombreFlora = view.findViewById(R.id.lyNameFloraAdd);
+        lyNombreFlora.setErrorEnabled(false);
+        lyNombreFlora.setHelperText("* Este campo es obligatorio");
+
         btImg = view.findViewById(R.id.btAddImg);
         btImg.setOnClickListener( l->{
             selectImage();
         });
         dataObserver();
 
-
+        textListener();
     }
 
     void navigation(View view){
@@ -139,6 +147,10 @@ public class AddFloraFragment extends Fragment {
         flora.setAmenazas(etAmenazas.getText().toString());
         flora.setMedidas_propuestas(etMedidas.getText().toString());
 
+        if(etName.getText().toString().trim().isEmpty()){
+            lyNombreFlora.setError("Este campo no puede estar vacío");
+            lyNombreFlora.setErrorEnabled(true);
+        }
         afvm.createFlora(flora);
     }
 
@@ -196,5 +208,26 @@ public class AddFloraFragment extends Fragment {
             imagen.descripcion = "descripcion";
             imagen.idflora = id;
             aivm.saveImagen(resultadoImagen, imagen);
+    }
+
+    void textListener(){
+        etName.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+                if(editable.length() >= 0){
+                    lyNombreFlora.setErrorEnabled(false);
+                }
+            }
+        });
     }
 }
