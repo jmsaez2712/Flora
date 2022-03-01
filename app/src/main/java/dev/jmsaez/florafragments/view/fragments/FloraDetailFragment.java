@@ -1,6 +1,8 @@
 package dev.jmsaez.florafragments.view.fragments;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -64,6 +66,7 @@ public class FloraDetailFragment extends Fragment {
     private MutableLiveData<Uri> image;
     private SliderView sliderView;
     private SliderAdapter adapter;
+
     @Override
     public View onCreateView(
             LayoutInflater inflater, ViewGroup container,
@@ -248,10 +251,7 @@ public class FloraDetailFragment extends Fragment {
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()){
             case R.id.delete_opt: {
-                mavm.deleteFlora(flora.getId());
-                mavm.getSecondDelete().observe(this, integer ->{
-                    NavHostFragment.findNavController(this).popBackStack();
-                });
+                alertDialog();
                 return true;
             }
             case R.id.edit_option:{
@@ -374,5 +374,28 @@ public class FloraDetailFragment extends Fragment {
                 }
             }
         });
+    }
+
+    void alertDialog(){
+        AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
+        builder.setTitle("¿Seguro que quieres eliminar?");
+        builder.setMessage("Esta acción es irreversible");
+
+        builder.setPositiveButton("Aceptar", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                mavm.deleteFlora(flora.getId());
+                mavm.getSecondDelete().observe(FloraDetailFragment.this, integer ->{
+                    NavHostFragment.findNavController(FloraDetailFragment.this).popBackStack();
+                });
+            }
+        });
+        builder.setNegativeButton("Cancelar", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+            }
+        });
+        AlertDialog dialog = builder.create();
+        dialog.show();
     }
 }

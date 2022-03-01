@@ -2,7 +2,10 @@ package dev.jmsaez.florafragments.view.fragments;
 
 import static android.content.Context.UI_MODE_SERVICE;
 
+import android.app.AlertDialog;
 import android.app.UiModeManager;
+import android.content.DialogInterface;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.ActionMode;
 import android.view.LayoutInflater;
@@ -13,6 +16,7 @@ import android.view.ViewGroup;
 import android.widget.ProgressBar;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatDelegate;
 import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.MutableLiveData;
@@ -80,23 +84,18 @@ public class FirstFragment extends Fragment {
     private void initialize(View view) {
 
         uiModeManager = (UiModeManager) view.getContext().getSystemService(UI_MODE_SERVICE);
-
         toolbar = view.findViewById(R.id.toolbar);
-        toolbar.inflateMenu(R.menu.app_mode);
-        toolbar.setOnMenuItemClickListener(item -> onOptionsItemSelected(item));
+        inflateMenu();
+
         progressBar = view.findViewById(R.id.progressBar);
         mavm = new ViewModelProvider(this).get(MainActivityViewModel.class);
-
         rvFlora = view.findViewById(R.id.rvFlora);
         rvFlora.setLayoutManager(new LinearLayoutManager(this.getContext()));
         floraAdapter = new FloraAdapter(this.getContext(), mavm);
 
         rvFlora.setAdapter(floraAdapter);
 
-        NavController navController = Navigation.findNavController(view);
-        AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(navController.getGraph()).build();
-        NavigationUI.setupWithNavController(toolbar, navController, appBarConfiguration);
-
+        navigation(view);
         createTracker();
         createObserver(view);
         observeList();
@@ -205,12 +204,12 @@ public class FirstFragment extends Fragment {
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         if(item.getItemId() == R.id.mode_opt){
-            switch (uiModeManager.getNightMode()){
-                case UiModeManager.MODE_NIGHT_YES:{
+            switch (uiModeManager.getNightMode()) {
+                case UiModeManager.MODE_NIGHT_YES: {
                     NightModeOFF();
                     return true;
                 }
-                case UiModeManager.MODE_NIGHT_NO:{
+                case UiModeManager.MODE_NIGHT_NO: {
                     NightModeON();
                     return true;
                 }
@@ -227,4 +226,18 @@ public class FirstFragment extends Fragment {
     public void NightModeOFF(){
         uiModeManager.setNightMode(UiModeManager.MODE_NIGHT_NO);
     }
+
+    void inflateMenu(){
+        if (Build.VERSION.SDK_INT <= 29)
+            toolbar.inflateMenu(R.menu.app_mode);
+        toolbar.setOnMenuItemClickListener(item -> onOptionsItemSelected(item));
+    }
+
+
+    void navigation(View view){
+        NavController navController = Navigation.findNavController(view);
+        AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(navController.getGraph()).build();
+        NavigationUI.setupWithNavController(toolbar, navController, appBarConfiguration);
+    }
+
 }

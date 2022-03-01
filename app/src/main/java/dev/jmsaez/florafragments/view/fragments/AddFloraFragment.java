@@ -1,6 +1,8 @@
 package dev.jmsaez.florafragments.view.fragments;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -45,8 +47,8 @@ import dev.jmsaez.florafragments.viewmodel.AddImagenViewModel;
 
 public class AddFloraFragment extends Fragment {
 
-    private TextInputEditText etName, etFamilia, etIdentificacion, etAltitud, etHabitat, etFitosociologia, etBiotipo
-            , etBiologiaReprod, etFloracion, etFructificacion, etExprSex, etPolinizacion, etDispersion, etNumCromo,
+    private TextInputEditText etName, etFamilia, etIdentificacion, etAltitud, etHabitat, etFitosociologia, etBiotipo,
+            etBiologiaReprod, etFloracion, etFructificacion, etExprSex, etPolinizacion, etDispersion, etNumCromo,
             etReprAsex, etDistribucion, etBiologia, etDemografia, etAmenazas, etMedidas;
     private TextInputLayout lyNombreFlora;
     Button btImg;
@@ -166,8 +168,9 @@ public class AddFloraFragment extends Fragment {
         if(etName.getText().toString().trim().isEmpty()){
             lyNombreFlora.setError("Este campo no puede estar vacío");
             lyNombreFlora.setErrorEnabled(true);
+        } else {
+            afvm.createFlora(flora);
         }
-        afvm.createFlora(flora);
     }
 
     @Override
@@ -178,7 +181,6 @@ public class AddFloraFragment extends Fragment {
                 createFlora();
                 return true;
             }
-
         }
         return false;
     }
@@ -247,4 +249,7 @@ public class AddFloraFragment extends Fragment {
             }
         });
     }
+
+
+
 }
