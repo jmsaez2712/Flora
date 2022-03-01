@@ -11,14 +11,20 @@ Also is based on fragments and I added the support of multiselection delete with
 
 Here you have some app screenshots
 
-Main Screen: 
+Main Screen:
+
 ![Main Screen of the app](screenshot/screenshot_recycler.png?raw=true)
+
 ![Main Screen of the app 2](screenshot/screenshot_recycler2.png?raw=true)
 
 Add Screen:
+
 ![Add Screen](screenshot/screenshot_add.png?raw=true)
+
 ![Add Screen 2](screenshot/screenshot_add2png.png?raw=true)
 
 Detail/Edit Screen
+
 ![Detail Screen](screenshot/screenshot_detail.png?raw=true)
+
 ![Edit Screen](screenshot/screenshot_edit.png?raw=true)
