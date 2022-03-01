@@ -21,7 +21,7 @@ Add Screen:
 
 ![Add Screen](screenshot/screenshot_add.png?raw=true)
 
-![Add Screen 2](screenshot/screenshot_add2png.png?raw=true)
+![Add Screen 2](screenshot/screenshot_add_2png.png?raw=true)
 
 Detail/Edit Screen
 
