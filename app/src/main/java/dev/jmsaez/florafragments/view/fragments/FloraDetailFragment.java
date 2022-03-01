@@ -156,7 +156,7 @@ public class FloraDetailFragment extends Fragment {
 
         lyNombreFlora = view.findViewById(R.id.lyNameFlora);
         lyNombreFlora.setErrorEnabled(false);
-        lyNombreFlora.setHelperText("* Este campo es obligatorio");
+        lyNombreFlora.setHelperText("");
 
         btImg = view.findViewById(R.id.btImg);
         btImg.setOnClickListener( l ->{
@@ -240,6 +240,8 @@ public class FloraDetailFragment extends Fragment {
         etDemografia.setEnabled(true);
         etAmenazas.setEnabled(true);
         etMedidas.setEnabled(true);
+
+        lyNombreFlora.setHelperText("* Este campo es obligatorio");
     }
 
     void navigation(View view){
