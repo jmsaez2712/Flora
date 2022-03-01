@@ -1,14 +1,12 @@
-package dev.jmsaez.florafragments;
+package dev.jmsaez.florafragments.view.fragments;
 
 import static android.content.Context.UI_MODE_SERVICE;
 
 import android.app.UiModeManager;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.ActionMode;
 import android.view.LayoutInflater;
 import android.view.Menu;
-import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,7 +15,6 @@ import android.widget.ProgressBar;
 import androidx.annotation.NonNull;
 import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentTransaction;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.NavController;
@@ -35,11 +32,9 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
-import java.util.Objects;
-import java.util.concurrent.atomic.AtomicInteger;
 
+import dev.jmsaez.florafragments.R;
 import dev.jmsaez.florafragments.databinding.FragmentFirstBinding;
-import dev.jmsaez.florafragments.model.entity.DeleteResponse;
 import dev.jmsaez.florafragments.model.entity.Flora;
 import dev.jmsaez.florafragments.view.adapter.FloraAdapter;
 import dev.jmsaez.florafragments.view.adapter.LookupClass;

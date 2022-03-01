@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/main_fragment"
-        android:name="dev.jmsaez.florafragments.FirstFragment"
+        android:name="dev.jmsaez.florafragments.view.fragments.FirstFragment"
         android:label="@string/first_fragment_label"
         tools:layout="@layout/fragment_first">
 
@@ -20,7 +20,7 @@
     </fragment>
     <fragment
         android:id="@+id/SecondFragment"
-        android:name="dev.jmsaez.florafragments.FloraDetailFragment"
+        android:name="dev.jmsaez.florafragments.view.fragments.FloraDetailFragment"
         android:label="@string/second_fragment_label"
         tools:layout="@layout/fragment_second">
 
@@ -30,7 +30,7 @@
     </fragment>
     <fragment
         android:id="@+id/addFloraFragment"
-        android:name="dev.jmsaez.florafragments.AddFloraFragment"
+        android:name="dev.jmsaez.florafragments.view.fragments.AddFloraFragment"
         android:label="Añadir Flora"
         tools:layout="@layout/fragment_add_flora" />
 </navigation>

@@ -1,7 +1,8 @@
-package dev.jmsaez.florafragments;
+package dev.jmsaez.florafragments.view.fragments;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.activity.result.ActivityResultLauncher;
@@ -10,6 +11,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
@@ -26,11 +28,15 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 
+import java.util.Date;
+
+import dev.jmsaez.florafragments.R;
 import dev.jmsaez.florafragments.model.entity.Flora;
 import dev.jmsaez.florafragments.model.entity.Imagen;
 import dev.jmsaez.florafragments.viewmodel.AddFloraViewModel;
@@ -49,7 +55,8 @@ public class AddFloraFragment extends Fragment {
     private ActivityResultLauncher<Intent> launcher;
     private Intent resultadoImagen = null;
     private AddImagenViewModel aivm;
-
+    private ImageView ivAddFlora;
+    private MutableLiveData<Uri> image;
     public AddFloraFragment() {
         // Required empty public constructor
     }
@@ -82,6 +89,16 @@ public class AddFloraFragment extends Fragment {
         toolbar = view.findViewById(R.id.toolbar3);
         toolbar.inflateMenu(R.menu.add_menu);
         toolbar.setOnMenuItemClickListener( item -> {return onOptionsItemSelected(item);});
+
+        image = new MutableLiveData<>();
+        ivAddFlora = view.findViewById(R.id.ivAddFlora);
+        ivAddFlora.setVisibility(View.GONE);
+        image.observe(this, image->{
+            ivAddFlora.setVisibility(View.VISIBLE);
+            ivAddFlora.setImageURI(image);
+        });
+
+
         etName = view.findViewById(R.id.etNombreAdd);
         etFamilia = view.findViewById(R.id.etFamiliaAdd);
         etIdentificacion = view.findViewById(R.id.etIdentificacionAdd);
@@ -112,7 +129,6 @@ public class AddFloraFragment extends Fragment {
             selectImage();
         });
         dataObserver();
-
         textListener();
     }
 
@@ -185,6 +201,7 @@ public class AddFloraFragment extends Fragment {
                     if(result.getResultCode() == Activity.RESULT_OK) {
                         //copyData(result.getData());
                         resultadoImagen = result.getData();
+                        image.setValue(resultadoImagen.getData());
                     }
                 }
         );
@@ -204,7 +221,7 @@ public class AddFloraFragment extends Fragment {
 
     private void uploadDataImage(long id) {
             Imagen imagen = new Imagen();
-            imagen.nombre = "nombre";
+            imagen.nombre = String.valueOf(new Date().getTime());;
             imagen.descripcion = "descripcion";
             imagen.idflora = id;
             aivm.saveImagen(resultadoImagen, imagen);

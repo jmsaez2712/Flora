@@ -11,7 +11,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FloraFragments">
         <activity
-            android:name=".MainActivity"
+            android:name=".view.activity.MainActivity"
             android:exported="true"
             android:label="@string/app_name"
             android:theme="@style/Theme.FloraFragments.NoActionBar">

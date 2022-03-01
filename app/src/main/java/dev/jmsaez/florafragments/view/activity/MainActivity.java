@@ -1,4 +1,4 @@
-package dev.jmsaez.florafragments;
+package dev.jmsaez.florafragments.view.activity;
 
 import android.os.Bundle;
 
@@ -13,6 +13,7 @@ import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
+import dev.jmsaez.florafragments.R;
 import dev.jmsaez.florafragments.databinding.ActivityMainBinding;
 
 import android.view.Menu;

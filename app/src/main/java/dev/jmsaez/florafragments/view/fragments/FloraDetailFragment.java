@@ -1,7 +1,8 @@
-package dev.jmsaez.florafragments;
+package dev.jmsaez.florafragments.view.fragments;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -11,6 +12,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
 
 import androidx.activity.result.ActivityResultLauncher;
@@ -33,6 +35,7 @@ import com.smarteist.autoimageslider.SliderView;
 import java.util.ArrayList;
 import java.util.Date;
 
+import dev.jmsaez.florafragments.R;
 import dev.jmsaez.florafragments.databinding.FragmentSecondBinding;
 import dev.jmsaez.florafragments.model.entity.Flora;
 import dev.jmsaez.florafragments.model.entity.ImageRowResponse;
@@ -57,6 +60,10 @@ public class FloraDetailFragment extends Fragment {
     private ActivityResultLauncher<Intent> launcher;
     private Intent resultadoImagen = null;
     private Button btImg;
+    private ImageView ivAdd;
+    private MutableLiveData<Uri> image;
+    private SliderView sliderView;
+    private SliderAdapter adapter;
     @Override
     public View onCreateView(
             LayoutInflater inflater, ViewGroup container,
@@ -85,8 +92,8 @@ public class FloraDetailFragment extends Fragment {
         MutableLiveData<ImageRowResponse> images = aivm.getImagesLiveData();
 
         ArrayList<SliderItem> sliderDataArrayList = new ArrayList<>();
-        SliderView sliderView = view.findViewById(R.id.imageSlider);
-        SliderAdapter adapter = new SliderAdapter(getContext());
+        sliderView = view.findViewById(R.id.imageSlider);
+        adapter = new SliderAdapter(getContext());
         sliderView.setSliderAdapter(adapter);
 
         Bundle bundle = getArguments();
@@ -109,6 +116,18 @@ public class FloraDetailFragment extends Fragment {
 
     void initialize(View view){
         launcher = getLauncher();
+
+        image = new MutableLiveData<>();
+        ivAdd = view.findViewById(R.id.ivAdd);
+
+        ivAdd.setVisibility(View.INVISIBLE);
+        sliderView.setVisibility(View.VISIBLE);
+
+        image.observe(this, image->{
+            ivAdd.setVisibility(View.VISIBLE);
+            sliderView.setVisibility(View.GONE);
+            ivAdd.setImageURI(image);
+        });
 
         etName = view.findViewById(R.id.etNombreFlora);
         etFamilia = view.findViewById(R.id.etFamiliaFlora);
@@ -217,8 +236,6 @@ public class FloraDetailFragment extends Fragment {
         etDemografia.setEnabled(true);
         etAmenazas.setEnabled(true);
         etMedidas.setEnabled(true);
-
-
     }
 
     void navigation(View view){
@@ -303,6 +320,7 @@ public class FloraDetailFragment extends Fragment {
                     if(result.getResultCode() == Activity.RESULT_OK) {
                         //copyData(result.getData());
                         resultadoImagen = result.getData();
+                        image.setValue(resultadoImagen.getData());
                     }
                 }
         );

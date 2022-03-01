@@ -6,7 +6,7 @@
     android:id="@+id/constraintLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AddFloraFragment">
+    tools:context=".view.fragments.AddFloraFragment">
 
     <androidx.core.widget.NestedScrollView
         android:id="@+id/nestedScrollView"
@@ -33,6 +33,19 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
 
+            <ImageView
+                android:id="@+id/ivAddFlora"
+                android:layout_width="0dp"
+                android:layout_height="200dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/toolbar3"
+                tools:src="@tools:sample/avatars" />
+
             <Button
                 android:id="@+id/btAddImg"
                 android:layout_width="wrap_content"
@@ -41,7 +54,7 @@
                 android:text="Añadir imagen"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/toolbar3" />
+                app:layout_constraintTop_toBottomOf="@+id/ivAddFlora" />
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/lyNameFloraAdd"
