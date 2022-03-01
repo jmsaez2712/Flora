@@ -139,7 +139,7 @@ public class FloraDetailFragment extends Fragment {
         btImg.setOnClickListener( l ->{
             selectImage();
         });
-
+        textListener();
         editObserver();
     }
     @Override
