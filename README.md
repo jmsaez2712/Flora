@@ -25,6 +25,6 @@ Add Screen:
 
 Detail/Edit Screen
 
-![Detail Screen](screenshot/screenshot_detai.png?raw=true)
+![Detail Screen](screenshot/screenshot_edit.png?raw=true)
 
-![Edit Screen](screenshot/screenshot_edit.png?raw=true)
+![Edit Screen](screenshot/screenshot_detail.png?raw=true)
