@@ -14,6 +14,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ProgressBar;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatDelegate;
@@ -110,6 +111,7 @@ public class FirstFragment extends Fragment {
 
         MutableLiveData<Integer> delete = mavm.getSecondDelete();
         delete.observe(FirstFragment.this, integer -> {
+            Toast.makeText(getContext(), "Floras borradas", Toast.LENGTH_SHORT).show();
             refreshFragment();
         });
 

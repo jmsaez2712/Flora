@@ -190,6 +190,7 @@ public class AddFloraFragment extends Fragment {
             if(flora > 0){
                 if(resultadoImagen != null)
                     uploadDataImage(flora);
+                Toast.makeText(getContext(), "Flora creada", Toast.LENGTH_SHORT).show();
                 NavHostFragment.findNavController(this).popBackStack();
             }
         });

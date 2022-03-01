@@ -16,6 +16,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
+import android.widget.Toast;
 
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
@@ -351,6 +352,7 @@ public class FloraDetailFragment extends Fragment {
             if(resultadoImagen != null) {
                 uploadDataImage(flora.getId());
             }
+            Toast.makeText(getContext(), "Flora actualizada", Toast.LENGTH_SHORT).show();
             NavHostFragment.findNavController(this).navigate(R.id.action_SecondFragment_to_FirstFragment);
         });
     }
@@ -386,6 +388,7 @@ public class FloraDetailFragment extends Fragment {
             public void onClick(DialogInterface dialogInterface, int i) {
                 mavm.deleteFlora(flora.getId());
                 mavm.getSecondDelete().observe(FloraDetailFragment.this, integer ->{
+                    Toast.makeText(getContext(), "Flora borrada", Toast.LENGTH_SHORT).show();
                     NavHostFragment.findNavController(FloraDetailFragment.this).popBackStack();
                 });
             }
