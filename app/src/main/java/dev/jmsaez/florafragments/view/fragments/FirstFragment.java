@@ -111,9 +111,10 @@ public class FirstFragment extends Fragment {
 
         MutableLiveData<Integer> delete = mavm.getSecondDelete();
         delete.observe(FirstFragment.this, integer -> {
-            Toast.makeText(getContext(), "Floras borradas", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getContext(), "Floras borrada(s)", Toast.LENGTH_SHORT).show();
             refreshFragment();
         });
+
 
     }
 
@@ -164,7 +165,7 @@ public class FirstFragment extends Fragment {
             @Override
             public boolean onCreateActionMode(ActionMode actionMode, Menu menu) {
                 actionMode.getMenuInflater().inflate(R.menu.action_mode_menu, menu);
-                toolbar.setVisibility(View.INVISIBLE);
+                toolbar.setVisibility(View.GONE);
                 return true;
             }
 

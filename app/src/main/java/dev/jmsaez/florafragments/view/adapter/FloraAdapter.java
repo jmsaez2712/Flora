@@ -12,6 +12,7 @@ import androidx.recyclerview.selection.SelectionTracker;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
@@ -49,11 +50,7 @@ public class FloraAdapter extends RecyclerView.Adapter<FloraViewHolder> {
         Flora flora = floraList.get(position);
         holder.flora = flora;
 
-        Log.v("::FLORAID", flora.getId()+"");
-        Log.v(":::URLID", URL_IMG + flora.getId()+"/flora");
-
-//        Glide.with(context).load(URL_IMG + flora.getId()+"/flora").into(holder.ivFlora);
-        Picasso.get().load(URL_IMG + flora.getId()+"/flora").into(holder.ivFlora);
+        Glide.with(context).load(URL_IMG + flora.getId()+"/flora").diskCacheStrategy(DiskCacheStrategy.NONE).skipMemoryCache(true).into(holder.ivFlora);
         holder.tvFlora.setText(flora.getNombre());
 
         if(tracker.isSelected((long) position)){
@@ -92,7 +89,6 @@ public class FloraAdapter extends RecyclerView.Adapter<FloraViewHolder> {
     public void delete(){
         for (int i = 0; i < florasToDelete.size(); i++) {
             mavm.deleteFlora(florasToDelete.get(i).getId());
-            Log.v(":::SIZEDelete", ""+florasToDelete.size());
         }
     }
 }
